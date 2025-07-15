@@ -1,3 +1,14 @@
+:root {
+    --preto-25: rgba(0, 0, 0, 0.25);
+    --preto-55: #0000008c; 
+    --preto-125: rgba(0, 0, 0, 0.125);
+    --preto-90: rgba(0, 0, 0, 0.9);
+    --amarelo: #FFE601;
+    --verde: #00A650;
+    --cinza: #4b4b4b;
+    --azul: #3583fa;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +17,42 @@
 
 body {
     font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--preto-90);
     background-color: #ebebeb;
 }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 18px;
+}
+
+/* Classes utilitárias */
+
+.bold {
+    font-weight: 700;
+}
+
+.verde {
+    color: var(--verde);
+}
+
+.preto-55 {
+    color: var(--preto-55);
+}
+
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #FFE601;
+    background-color: var(--amarelo);
     padding: 16px 32px;
 }
 
@@ -26,7 +64,7 @@ header {
 
 .produto__preco-riscado {
     text-decoration: line-through;
-    color: #0000008c;
+    color: var(--preto-55);
 }
 
 .produto_preco {
@@ -71,14 +109,6 @@ header {
     padding: 64px 32px;
 }
 
-.bold {
-    font-weight: 700;
-}
-
-.verde {
-    color: #00A650;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -94,10 +124,17 @@ header {
     gap: 48px;
 }
 
+.container--produto {
+    gap: 32px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 footer {
     background-color: white;
     padding: 48px;
-    color: rgba(0, 0, 0, 0.55);
+    color: var(--preto-55);
     text-align: center;
 }
 
@@ -116,7 +153,7 @@ footer {
 }
 
 .diferencial__h2 {
-    color: #4b4b4b;
+    color: var(--cinza);
     font-weight: 400;
 }
 
@@ -131,7 +168,136 @@ footer {
 .barra-vertical {
     width: 1px;
     height: 50%;
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: var(--preto-25);
     align-self: center;
     justify-self: center;
+}
+
+.imagem-pequena {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: solid 1px var(--preto-25);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.imagem-pequena--selecionada {
+    border: solid 2px var(--azul);
+}
+
+.imagens-pequenas {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.imagens {
+    display: flex;
+}
+
+.imagem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-height: 470px;
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.informacoes__caracteristicas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.informacoes__caracteristicas h2 {
+    font-size: 16px;
+}
+
+.pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: solid 1px var(--preto-125);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pedido__full,
+.pedido__quantidade {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+button {
+    padding: 16px 32px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--azul);
+    color: white;
+    font-weight: 700;
+}
+
+.carrinho {
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.55);
+}
+
+.carrinho__titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho__titulo p {
+    width: 35px;
+    height: 35px;
+    background-color: var(--cinza);
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    font-weight: 700;
+}
+
+.carrinho__img {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho__img-titulo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.carrinho__quantidade {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.carrinho__icone-qtd {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
